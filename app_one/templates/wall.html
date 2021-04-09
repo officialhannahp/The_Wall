@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/wall.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="top">
+
+        <h1>CodingDojo Wall</h1>
+        <h2><a href="/" class="logout">Log Out</a> | Welcome {{ user.f_name }}</h2><br>
+    </div>
+
+    <form action="/new_message" method="POST">
+        {% csrf_token %}
+        <div>
+            <textarea class="msgbox" rows="9" cols="145" name="message" placeholder="Post a message"></textarea>
+            <input class="button" type="submit" value="Post a message">
+        </div>
+    </form>
+
+
+        {% for msg in messages reversed %}
+        <hr>
+        <div class="message">
+            <p class="msgname">{{ msg.user.f_name }} {{ msg.user.l_name }} - {{msg.user.created_at}}</p>
+            <p1>{{ msg.message }}</p1>
+
+            {% if msg.user == user %}
+            <a class="deletemsg" href="delete/{{msg.id}}">delete</a><br>
+            {% endif %}
+            <br>
+        </div>
+        {% for cmt in msg.comments.all %}
+        <div class="comment">
+            <p class="cmtname">{{ cmt.user.f_name }} {{ cmt.user.l_name }} - {{cmt.user.created_at}} </p>
+            <p2>{{ cmt.comment }}</p>
+
+            {% if cmt.user == user %}
+                <a class="deletecmt" href="delete/{{cmt.id}}">delete</a><br>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+
+    <form action="/new_comment" method="POST">
+        {% csrf_token %}
+        <div>
+            <input type="hidden" name="message_id" value="{{msg.id}}">
+            <textarea class="cmtbox" rows="2" cols="145" name="comment" placeholder="Post a comment"></textarea><br>
+            <input class="button" type="submit" value="Post a comment">
+        </div>
+    </form>
+    {% endfor %}
+
+</body>
+
+</html>

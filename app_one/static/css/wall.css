@@ -1,0 +1,119 @@
+body{
+    background-color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.top{
+    width: 100%;
+    height: 70px;
+    /* background-color: white; */
+    padding-bottom: 17px;
+    /* color: white; */
+}
+
+        h1{
+            display: inline-block;
+            color: rgb(247, 153, 30);
+            margin-left: 40px;
+        }
+
+        h2{
+            display: inline-block;
+            margin-left: 630px;
+            font-size: large;
+        }
+
+        .logout{
+            text-decoration: none;
+            color: black;
+        }
+
+.message{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.msgbox{
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 33px;
+}
+
+
+        .msgname{
+            font-size: 15px;
+            color: rgb(126, 124, 124);
+        }
+
+        p1{
+            margin-left: 40px;
+            font-size: 18px;
+        }
+
+        .cmtname{
+            color: rgb(126, 124, 124);
+            font-size: 12px;
+            margin-left:40px;
+
+        }
+
+        .comment{
+            width: 100%;
+            height: auto;
+            background-color: bisque;
+        }
+
+        p2{
+            font-size: 13px;
+            color: black;
+            margin-left: 50px;
+        }
+
+
+.cmtbox{
+margin-left: 33px;
+margin-top: 10px;
+}
+
+
+textarea{
+    border: none;
+}
+
+.button{
+    float: right;
+    border: none;
+    margin-right: 30px;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border:none;
+    background-color:transparent;
+    outline:none;
+}
+
+hr{
+    width: 100%;
+}
+
+.deletemsg{
+    float: right;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.deletecmt{
+    float: right;
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 13px;
+    padding-bottom: px;
+}
+
+p{
+    margin-left: 40px;
+
+}
